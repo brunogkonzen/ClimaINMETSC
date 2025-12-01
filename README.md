@@ -37,16 +37,12 @@ A partir dessas medições (temperatura, umidade, precipitação, pressão, radi
 
 📊 Dataset
 
-
 Fonte: INMET – Estações Automáticas (dados públicos)
-
 Período: 01/01/2024 a 31/12/2024
-
 Cobertura geográfica: Oeste de Santa Catarina (Chapecó, SMO, Dionísio Cerqueira)
-
 Registros: ~17.000 observações horárias
 
-Principais atributos:
+Principais atributos
 
 temp_c – Temperatura do ar (°C)
 
@@ -64,7 +60,7 @@ hora – Hora do dia (0–23)
 
 faixa_climatica – Classe alvo (Frio/Ameno/Quente + Seco/Chuvoso)
 
-A coluna faixa_climatica é construída a partir de regras sobre temperatura e precipitação e é usada como alvo para o modelo de classificação.
+A coluna faixa_climatica foi construída a partir de regras sobre temperatura e precipitação e é utilizada como alvo para o modelo de classificação.
 
 
 ## 🧠 Modelagem de Dados
