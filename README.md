@@ -26,12 +26,11 @@ Condição de chuva → Seco / Chuvoso
 
 ## 📂 Estrutura do Repositório
 
-.
-├── app.py # Aplicação Streamlit
-├── clima_inmet_oeste_2024.csv # Dataset tratado (dados de 2024 unificados)
-├── requirements.txt # Dependências do projeto
-├── README.md # Este arquivo
-└── INSTRUCOES_TRABALHO.md # Especificações da atividade
+├── app.py # Aplicação Streamlit   
+├── clima_inmet_oeste_2024.csv # Dataset tratado (dados de 2024 unificados)   
+├── requirements.txt # Dependências do projeto   
+├── README.md # Este arquivo   
+└── INSTRUCOES_TRABALHO.md # Especificações da atividade   
 
 ## 📊 Dataset
 
@@ -143,18 +142,18 @@ Um gráfico de barras
 Feature importance do Random Forest
 
 ## ▶️ Como executar localmente
-1. Clonar o repositório
-git clone https://github.com/brunogkonzen/ClimaINMETSC
+1. Clonar o repositório   
+git clone https://github.com/brunogkonzen/ClimaINMETSC   
 
-2. Criar ambiente virtual (opcional, recomendado)
-python -m venv venv
-venv\Scripts\activate   # Windows
+2. Criar ambiente virtual (opcional, recomendado)   
+python -m venv venv   
+venv\Scripts\activate   # Windows   
 
-3. Instalar dependências
-pip install -r requirements.txt
+3. Instalar dependências   
+pip install -r requirements.txt   
 
-4. Rodar o Streamlit
-streamlit run app.py
+4. Rodar o Streamlit   
+streamlit run app.py   
 
 ## 🔗 Links importantes
 
