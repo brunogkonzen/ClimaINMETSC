@@ -24,13 +24,14 @@ Temperatura → Frio / Ameno / Quente
 
 Condição de chuva → Seco / Chuvoso
 
-## 🗂 Estrutura do Repositório
+## 📂 Estrutura do Repositório
+
 .
-├── app.py                       # Aplicação Streamlit
-├── clima_inmet_oeste_2024.csv   # Dataset tratado (dados de 2024 unificados)
-├── requirements.txt             # Dependências do projeto
-├── README.md                    # Este arquivo
-└── INSTRUCOES_TRABALHO.md       # Especificações da atividade
+├── app.py # Aplicação Streamlit
+├── clima_inmet_oeste_2024.csv # Dataset tratado (dados de 2024 unificados)
+├── requirements.txt # Dependências do projeto
+├── README.md # Este arquivo
+└── INSTRUCOES_TRABALHO.md # Especificações da atividade
 
 ## 📊 Dataset
 
