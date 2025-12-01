@@ -34,9 +34,9 @@ A partir dessas medições (temperatura, umidade, precipitação, pressão, radi
 ├── README.md                    # Este arquivo
 └── INSTRUCOES_TRABALHO.md       
 
----
 
-## 📊 Dataset
+📊 Dataset
+
 
 Fonte: INMET – Estações Automáticas (dados públicos)
 
@@ -66,7 +66,9 @@ faixa_climatica – Classe alvo (Frio/Ameno/Quente + Seco/Chuvoso)
 
 A coluna faixa_climatica é construída a partir de regras sobre temperatura e precipitação e é usada como alvo para o modelo de classificação.
 
+
 ## 🧠 Modelagem de Dados
+
 
 Tipo de aprendizagem: Supervisionada – Classificação multiclasse
 
@@ -93,7 +95,9 @@ O modelo atinge acurácia próxima de 100%, o que é esperado, pois as classes f
 
 Além disso, é feita uma validação adicional treinando um segundo modelo sem temperatura e precipitação, mostrando a queda de desempenho e reforçando a importância dessas variáveis para a definição da faixa climática.
 
+
 ## 🌐 Aplicação Streamlit
+
 
 O arquivo app.py implementa uma interface gráfica para:
 
@@ -121,7 +125,10 @@ Visualizar a distribuição de probabilidades entre as classes;
 
 Visualizar a importância das variáveis (feature importance da Random Forest).
 
+
 ## ▶️ Como executar localmente
+
+
 1. Clonar o repositório
 git clone https://github.com/brunogkonzen/ClimaINMETSC
 
@@ -135,7 +142,9 @@ pip install -r requirements.txt
 4. Rodar o Streamlit
 streamlit run app.py
 
+
 ## 🔗 Links importantes
+
 
 Notebook com o experimento completo:
 https://www.kaggle.com/code/brunokonzen/dataset-clima-inmet
@@ -146,6 +155,8 @@ https://www.kaggle.com/datasets/brunokonzen/clima-inmet-sc-regio-oeste-2024/data
 Aplicação publicada no Streamlit Cloud:
 https://climainmetsc.streamlit.app/
 
+
 ## 📌 Licença
+
 
 Este projeto utiliza dados públicos do INMET. O código pode ser reutilizado para fins acadêmicos, desde que citada a fonte original.
