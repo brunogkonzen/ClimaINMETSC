@@ -1,52 +1,45 @@
-# 🌤️ Clima INMET – Região Oeste de Santa Catarina (2024)
+## 🌤️ Clima INMET – Região Oeste de Santa Catarina (2024)
 
-Este repositório contém o projeto da disciplina de **Ciência de Dados**, cujo objetivo é aplicar o processo completo de Ciência de Dados sobre um conjunto de dados **real** e **regional**, construindo também uma interface interativa para teste do modelo em **Streamlit**.
+Este repositório contém o projeto da disciplina de Ciência de Dados, cujo objetivo é aplicar o processo completo de Ciência de Dados sobre um conjunto de dados real e regional, além de desenvolver uma interface interativa para teste do modelo em Streamlit.
 
 ## 👥 Equipe
 
-- Arthur Borger Kochem
-- Bruno Gabriel Konzen
+Arthur Borger Kochem
 
----
+Bruno Gabriel Konzen
 
 ## 📦 Descrição do Projeto
 
-O projeto utiliza dados meteorológicos horários do **INMET** (Instituto Nacional de Meteorologia) referentes ao ano de **2024** para três estações da região Oeste de Santa Catarina:
+O projeto utiliza dados meteorológicos horários do INMET (Instituto Nacional de Meteorologia) referentes ao ano de 2024, para três estações da região Oeste de Santa Catarina:
 
-- Chapecó (A895)  
-- São Miguel do Oeste (A857)  
-- Dionísio Cerqueira (A848)  
+Chapecó (A895)
 
-A partir dessas medições (temperatura, umidade, precipitação, pressão, radiação, vento etc.), o objetivo é **classificar automaticamente faixas climáticas**, combinando:
+São Miguel do Oeste – SMO (A857)
 
-- Temperatura: **Frio / Ameno / Quente**  
-- Condição de chuva: **Seco / Chuvoso**
+Dionísio Cerqueira (A848)
 
----
+A partir dessas medições (temperatura, umidade, precipitação, pressão, radiação, vento etc.), o objetivo é classificar automaticamente faixas climáticas combinando:
+
+Temperatura → Frio / Ameno / Quente
+
+Condição de chuva → Seco / Chuvoso
 
 ## 🗂 Estrutura do Repositório
-
-```text
 .
 ├── app.py                       # Aplicação Streamlit
 ├── clima_inmet_oeste_2024.csv   # Dataset tratado (dados de 2024 unificados)
 ├── requirements.txt             # Dependências do projeto
 ├── README.md                    # Este arquivo
-└── INSTRUCOES_TRABALHO.md       
-
----
+└── INSTRUCOES_TRABALHO.md       # Especificações da atividade
 
 ## 📊 Dataset
 
 Fonte: INMET – Estações Automáticas (dados públicos)
-
 Período: 01/01/2024 a 31/12/2024
-
 Cobertura geográfica: Oeste de Santa Catarina (Chapecó, SMO, Dionísio Cerqueira)
-
 Registros: ~17.000 observações horárias
 
-Principais atributos:
+Principais atributos
 
 temp_c – Temperatura do ar (°C)
 
@@ -64,23 +57,30 @@ hora – Hora do dia (0–23)
 
 faixa_climatica – Classe alvo (Frio/Ameno/Quente + Seco/Chuvoso)
 
-A coluna faixa_climatica é construída a partir de regras sobre temperatura e precipitação e é usada como alvo para o modelo de classificação.
+A coluna faixa_climatica foi construída a partir de regras sobre temperatura e precipitação e é utilizada como alvo para o modelo de classificação.
 
 ## 🧠 Modelagem de Dados
+Tipo de aprendizagem:
 
-Tipo de aprendizagem: Supervisionada – Classificação multiclasse
+Supervisionada – Classificação multiclasse
 
-Algoritmo: RandomForestClassifier (scikit-learn)
+Algoritmo:
 
-Pipeline:
+RandomForestClassifier (scikit-learn)
+
+Pipeline
 
 Normalização com StandardScaler
 
-Classificação com RandomForestClassifier
+Modelo RandomForestClassifier
 
-Divisão treino/teste: 70% / 30% (train_test_split com stratify)
+Divisão dos dados
 
-Métricas de avaliação:
+70% treino / 30% teste
+
+train_test_split com stratify para manter proporção das classes
+
+Métricas
 
 Acurácia
 
@@ -89,19 +89,31 @@ Precision
 Recall
 
 F1-score (por classe)
-O modelo atinge acurácia próxima de 100%, o que é esperado, pois as classes foram definidas diretamente a partir de variáveis de entrada (temperatura e precipitação). Isso significa que o modelo aprende corretamente a regra de classificação proposta.
 
-Além disso, é feita uma validação adicional treinando um segundo modelo sem temperatura e precipitação, mostrando a queda de desempenho e reforçando a importância dessas variáveis para a definição da faixa climática.
+O modelo atinge acurácia próxima de 100%, o que é esperado porque as classes foram definidas diretamente a partir das variáveis de entrada (regras climáticas).
+Isso demonstra que o modelo aprende corretamente a lógica de classificação proposta.
+
+Também foi treinado um modelo reduzido sem temperatura e precipitação, mostrando uma queda na acurácia — reforçando a importância dessas variáveis na definição da faixa climática.
 
 ## 🌐 Aplicação Streamlit
 
-O arquivo app.py implementa uma interface gráfica para:
+O arquivo app.py implementa uma interface gráfica que permite:
 
-Visualizar o desempenho do modelo (acurácia e relatório de classificação);
+✔ Visualizar desempenho do modelo
 
-Comparar o modelo completo com um modelo reduzido (sem temp/chuva);
+Acurácia
 
-Fazer previsão interativa, ajustando:
+Relatório de classificação
+
+✔ Comparar modelos
+
+Modelo completo
+
+Modelo reduzido (sem temp/chuva)
+
+✔ Fazer previsão interativa
+
+O usuário ajusta:
 
 Temperatura
 
@@ -111,23 +123,31 @@ Precipitação
 
 Radiação
 
-Velocidade do vento
+Vento
 
-Pressão atmosférica
+Pressão
 
-Hora do dia
+Hora
 
-Visualizar a distribuição de probabilidades entre as classes;
+E o app retorna:
 
-Visualizar a importância das variáveis (feature importance da Random Forest).
+A faixa climática prevista
+
+A probabilidade para cada classe
+
+Um gráfico de barras
+
+✔ Mostrar importância das variáveis
+
+Feature importance do Random Forest
 
 ## ▶️ Como executar localmente
 1. Clonar o repositório
 git clone https://github.com/brunogkonzen/ClimaINMETSC
 
-2. Criar ambiente virtual (opcional, mas recomendado)
+2. Criar ambiente virtual (opcional, recomendado)
 python -m venv venv
-venv\Scripts\activate     # Windows
+venv\Scripts\activate   # Windows
 
 3. Instalar dependências
 pip install -r requirements.txt
@@ -137,15 +157,16 @@ streamlit run app.py
 
 ## 🔗 Links importantes
 
-Notebook com o experimento completo:
+📘 Notebook (experimento completo):
 https://www.kaggle.com/code/brunokonzen/dataset-clima-inmet
 
-Dataset no Kaggle:
+📂 Dataset no Kaggle:
 https://www.kaggle.com/datasets/brunokonzen/clima-inmet-sc-regio-oeste-2024/data
 
-Aplicação publicada no Streamlit Cloud:
+🌐 Aplicação Streamlit publicada:
 https://climainmetsc.streamlit.app/
 
 ## 📌 Licença
 
-Este projeto utiliza dados públicos do INMET. O código pode ser reutilizado para fins acadêmicos, desde que citada a fonte original.
+Este projeto utiliza dados públicos do INMET.
+O código pode ser reutilizado para fins acadêmicos, desde que a fonte seja citada.
