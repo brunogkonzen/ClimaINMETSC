@@ -30,14 +30,9 @@ Condição de chuva → Seco / Chuvoso
 ├── clima_inmet_oeste_2024.csv   # Dataset tratado (dados de 2024 unificados)
 ├── requirements.txt             # Dependências do projeto
 ├── README.md                    # Este arquivo
-<<<<<<< HEAD
 └── INSTRUCOES_TRABALHO.md       # Especificações da atividade
-=======
-└── INSTRUCOES_TRABALHO.md       
 
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
-
-📊 Dataset
+## 📊 Dataset
 
 Fonte: INMET – Estações Automáticas (dados públicos)
 Período: 01/01/2024 a 31/12/2024
@@ -63,20 +58,11 @@ hora – Hora do dia (0–23)
 faixa_climatica – Classe alvo (Frio/Ameno/Quente + Seco/Chuvoso)
 
 A coluna faixa_climatica foi construída a partir de regras sobre temperatura e precipitação e é utilizada como alvo para o modelo de classificação.
-<<<<<<< HEAD
-=======
-
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
 
 ## 🧠 Modelagem de Dados
 Tipo de aprendizagem:
 
-<<<<<<< HEAD
 Supervisionada – Classificação multiclasse
-=======
-
-Tipo de aprendizagem: Supervisionada – Classificação multiclasse
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
 
 Algoritmo:
 
@@ -109,15 +95,9 @@ Isso demonstra que o modelo aprende corretamente a lógica de classificação pr
 
 Também foi treinado um modelo reduzido sem temperatura e precipitação, mostrando uma queda na acurácia — reforçando a importância dessas variáveis na definição da faixa climática.
 
-
 ## 🌐 Aplicação Streamlit
 
-<<<<<<< HEAD
 O arquivo app.py implementa uma interface gráfica que permite:
-=======
-
-O arquivo app.py implementa uma interface gráfica para:
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
 
 ✔ Visualizar desempenho do modelo
 
@@ -161,10 +141,7 @@ Um gráfico de barras
 
 Feature importance do Random Forest
 
-
 ## ▶️ Como executar localmente
-
-
 1. Clonar o repositório
 git clone https://github.com/brunogkonzen/ClimaINMETSC
 
@@ -178,15 +155,9 @@ pip install -r requirements.txt
 4. Rodar o Streamlit
 streamlit run app.py
 
-
 ## 🔗 Links importantes
 
-<<<<<<< HEAD
 📘 Notebook (experimento completo):
-=======
-
-Notebook com o experimento completo:
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
 https://www.kaggle.com/code/brunokonzen/dataset-clima-inmet
 
 📂 Dataset no Kaggle:
@@ -195,13 +166,7 @@ https://www.kaggle.com/datasets/brunokonzen/clima-inmet-sc-regio-oeste-2024/data
 🌐 Aplicação Streamlit publicada:
 https://climainmetsc.streamlit.app/
 
+## S📌 Licença
 
-## 📌 Licença
-
-<<<<<<< HEAD
 Este projeto utiliza dados públicos do INMET.
 O código pode ser reutilizado para fins acadêmicos, desde que a fonte seja citada.
-=======
-
-Este projeto utiliza dados públicos do INMET. O código pode ser reutilizado para fins acadêmicos, desde que citada a fonte original.
->>>>>>> 536336e262978e7defbbd1b552aedc7d22aed25f
